@@ -1,6 +1,7 @@
 const express = require("express")
 const https = require("https")
 const bodyParser = require("body-parser")
+require('dotenv').config();
 
 const app = express()
 
@@ -15,7 +16,7 @@ app.post("/", function(req, res){
 
     console.log(req.body.cityName)
 
-    const appid = "46628f94b0de43bf0289713c74a5f0be";
+    const appid = process.env.APP_ID;
     const query = req.body.cityName;
     const unit = "metric";
 
